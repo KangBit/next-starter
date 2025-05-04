@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
+import TodoItem from "./components/TodoItem";
 
-type Todo = {
+export type Todo = {
   id: string;
   title: string;
   content: string;
@@ -29,13 +30,7 @@ export default function Todo() {
         <h1 className={styles.title}>TODO 리스트</h1>
 
         {todos.map((todo) => (
-          <div className={styles.card} key={todo.id}>
-            <div className={styles.cardHeader}>
-              <div className={styles.checkbox}></div>
-              <h3 className={styles.cardTitle}>{todo.title}</h3>
-            </div>
-            <p className={styles.cardContent}>{todo.content}</p>
-          </div>
+          <TodoItem key={todo.id} todo={todo} />
         ))}
       </div>
     </div>
