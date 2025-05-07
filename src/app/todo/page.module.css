@@ -48,5 +48,53 @@
 .cardContent {
   margin-top: 0.5rem;
   margin-left: 2rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formLabel {
+  font-size: 1.125rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--foreground);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: transparent;
+  color: var(--foreground);
+}
+
+.formTextarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--foreground);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: transparent;
+  color: var(--foreground);
+  resize: vertical;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--foreground);
+  color: var(--background);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.submitButton:hover {
   opacity: 0.8;
 }
