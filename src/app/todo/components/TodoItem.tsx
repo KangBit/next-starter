@@ -1,6 +1,6 @@
-import type { Todo } from "../types";
+import type { Todo } from "@/app/todo/types";
 
-import styles from "../page.module.css";
+import styles from "@/app/todo/page.module.css";
 
 export default function TodoItem({ todo }: { todo: Todo }) {
   return (

@@ -1,4 +1,4 @@
-import type { Todo, TodoAction } from "../types";
+import type { Todo, TodoAction } from "@/app/todo/types";
 
 import { createContext, Dispatch } from "react";
 

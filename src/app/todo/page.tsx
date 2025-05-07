@@ -2,8 +2,12 @@
 
 import { useReducer } from "react";
 
-import { TodoContext, TodoDispatchContext, todoReducer } from "./store";
-import TodoList from "./components/TodoList";
+import {
+  TodoContext,
+  TodoDispatchContext,
+  todoReducer,
+} from "@/app/todo/store";
+import TodoList from "@/app/todo/components/TodoList";
 
 const TodoProvider = ({ children }: { children: React.ReactNode }) => {
   const [todos, dispatch] = useReducer(todoReducer, []);

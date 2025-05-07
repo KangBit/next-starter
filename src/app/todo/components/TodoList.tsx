@@ -1,9 +1,9 @@
 import { useContext } from "react";
 
-import TodoItem from "./TodoItem";
+import TodoItem from "@/app/todo/components/TodoItem";
 
-import styles from "../page.module.css";
-import { TodoContext } from "../store";
+import styles from "@/app/todo/page.module.css";
+import { TodoContext } from "@/app/todo/store";
 
 export default function TodoList() {
   const todos = useContext(TodoContext);
