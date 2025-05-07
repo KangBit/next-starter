@@ -1,7 +1,6 @@
-"use client";
+import type { Todo } from "../types";
 
 import styles from "../page.module.css";
-import { Todo } from "../page";
 
 export default function TodoItem({ todo }: { todo: Todo }) {
   return (

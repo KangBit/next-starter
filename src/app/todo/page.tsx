@@ -1,38 +1,26 @@
-import styles from "./page.module.css";
-import TodoItem from "./components/TodoItem";
+"use client";
 
-export type Todo = {
-  id: string;
-  title: string;
-  content: string;
-  completed: boolean;
-};
+import { useReducer } from "react";
 
-export default function Todo() {
-  const todos: Todo[] = [
-    {
-      id: "1",
-      title: "Next.js 공부",
-      content: "Next Starter 완성하기",
-      completed: false,
-    },
-    {
-      id: "2",
-      title: "코딩 공부",
-      content: "Vitepress Starter 완성하기",
-      completed: false,
-    },
-  ];
+import { TodoContext, TodoDispatchContext, todoReducer } from "./store";
+import TodoList from "./components/TodoList";
+
+const TodoProvider = ({ children }: { children: React.ReactNode }) => {
+  const [todos, dispatch] = useReducer(todoReducer, []);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.todoList}>
-        <h1 className={styles.title}>TODO 리스트</h1>
+    <TodoContext.Provider value={todos}>
+      <TodoDispatchContext.Provider value={dispatch}>
+        {children}
+      </TodoDispatchContext.Provider>
+    </TodoContext.Provider>
+  );
+};
 
-        {todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
-        ))}
-      </div>
-    </div>
+export default function TodoPage() {
+  return (
+    <TodoProvider>
+      <TodoList />
+    </TodoProvider>
   );
 }
